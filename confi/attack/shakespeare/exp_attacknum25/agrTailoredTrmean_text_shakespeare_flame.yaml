@@ -1,0 +1,27 @@
+_base_ : ['../../../defense/flame_text.yaml']
+
+############## base differential #############
+num_users: 715 # number of users: K
+num_selected_users: 100 # number of selected users: 100, for shakespeare, it is 10
+round: 1000 # rounds of training
+tau: 1
+batch_size: 4 # local batch size
+local_lr: 1 # local learning rate
+local_momentum: 0.9 # SGD Momentum default 0.5
+decay_weight: 0.99 # learning rate decay weight default 0.5
+global_momentum: 0.9 # global momentum
+########### base differential ends ###########
+
+method: attack_defense_fedavg
+attack: agrTailoredTrmean
+defend: flame
+# Model
+model: rnnshakespeare
+
+# Dataset configure
+data_type: text
+dataset: shakespeare
+iid: 0 # whether i.i.d or not
+
+# Attack method
+num_attackers: 25 # number of attackers
