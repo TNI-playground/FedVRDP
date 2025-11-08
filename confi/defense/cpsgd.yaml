@@ -1,0 +1,8 @@
+ _base_ : ['../base.yaml']
+
+############## base differential #############
+
+########### base differential ends ###########
+
+quant_k: 0 # k-bits
+quant_m: 0 # Bin(m, p)
