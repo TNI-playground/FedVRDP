@@ -1,0 +1,71 @@
+{
+    "fmnist": {
+        "dataset": "fmnist",
+        "model": "cnn",
+        "method": "fedavg",
+        "params": {
+            "iid": 1,
+            "val_set": 10,
+            "num_users": 6000,
+            "num_selected_users": 100,
+            "round": 180,
+            "tau": 10,
+            "batch_size": 10,
+            "local_lr": 0.125,
+            "local_momentum": 0.5,
+            "decay_weight": 0.99,
+            "clip": 1
+        },
+        "settings": {
+            "gpu": 0,
+            "seed": 1,
+            "repeat": 0
+        }   
+    },
+    "svhn": {
+        "dataset": "svhn",
+        "model": "cnn",
+        "method": "fedavg",
+        "params": {
+            "iid": 1,
+            "val_set": 10,
+            "num_users": 6000,
+            "num_selected_users": 100,
+            "round": 180,
+            "tau": 5,
+            "batch_size": 50,
+            "local_lr": 0.05,
+            "local_momentum": 0.8,
+            "decay_weight": 0.99,
+            "clip": 1
+        },
+        "settings": {
+            "gpu": 0,
+            "seed": 1,
+            "repeat": 0
+        }   
+    },
+    "shakespeare": {
+        "dataset": "shakespeare",
+        "model": "lstm",
+        "method": "fedavg",
+        "params": {
+            "iid": 0,
+            "val_set": null,
+            "num_users": 715,
+            "num_selected_users": 100,
+            "round": 1000,
+            "tau": 1,
+            "batch_size": 4,
+            "local_lr": 1,
+            "local_momentum": 0.9,
+            "decay_weight": 0.99,
+            "clip": 1
+        },
+        "settings": {
+            "gpu": 0,
+            "seed": 1,
+            "repeat": 0
+        }   
+    }
+}
