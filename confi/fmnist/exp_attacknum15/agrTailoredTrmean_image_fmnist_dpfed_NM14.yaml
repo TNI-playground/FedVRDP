@@ -1,0 +1,32 @@
+_base_ : ['../../../defense/dp.yaml']
+
+############## base differential #############
+num_users: 6000 # number of users: K
+num_selected_users: 100 # number of selected users: 100, for shakespeare, it is 10
+round: 180 # rounds of training
+tau: 10
+batch_size: 10 # local batch size
+local_lr: 0.125 # local learning rate
+decay_weight: 0.99 # learning rate decay weight default 0.5
+clip: 1 # clipping threshold
+########### base differential ends ###########
+
+############## dp differential #############
+noise_multiplier: 1.4 # noise multiplier
+########### dp differential ends ###########
+
+
+method: attack_defense_fedavg
+attack: agrTailoredTrmean
+defend: dpfed
+
+# Model
+model: cnnfmnist
+
+# Dataset configure
+data_type: image
+dataset: fmnist
+iid: 1 # whether i.i.d or not
+
+# Attack method
+num_attackers: 15 # number of attackers
